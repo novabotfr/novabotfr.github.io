@@ -92,6 +92,7 @@ const CATS = [
   { id: 'tickets', name: 'Tickets', ico: '🎫', sub: 'Support par tickets avec transcripts en ligne' },
   { id: 'config', name: 'Configuration', ico: '⚙️', sub: 'Embeds, vérification et accès au dashboard' },
   { id: 'utils', name: 'Utilitaires', ico: '🧰', sub: 'Infos et outils pratiques' },
+  { id: 'avis', name: 'Avis', ico: '⭐', sub: 'Donne ton avis, affiché sur la page Avis du site' },
 ];
 const CMDS = [
   { c: 'moderation', n: '/ban', d: 'Bannir un membre (même s\'il n\'est plus sur le serveur via /unban ensuite)', u: '/ban <membre> [raison] [supprimer_jours]', p: 'Bannir' },
@@ -118,6 +119,8 @@ const CMDS = [
   { c: 'utils', n: '/ping', d: 'Latence du bot', u: '/ping' },
   { c: 'utils', n: '/serverinfo', d: 'Infos sur le serveur', u: '/serverinfo' },
   { c: 'utils', n: '/userinfo', d: 'Infos sur un membre', u: '/userinfo [membre]' },
+  { c: 'avis', n: '/avis', d: 'Laisser ton avis sur Nova (note + message), affiché sur la page Avis du site', u: '/avis <note> <message> [anonyme]' },
+  { c: 'avis', n: '/avis-supprimer', d: 'Retirer ton avis de la page Avis', u: '/avis-supprimer' },
 ];
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const hl = (s, q) => { const e = esc(s); if (!q) return e; const i = e.toLowerCase().indexOf(esc(q).toLowerCase()); return i < 0 ? e : e.slice(0, i) + '<mark>' + e.slice(i, i + esc(q).length) + '</mark>' + e.slice(i + esc(q).length); };
