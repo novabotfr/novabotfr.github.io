@@ -1,6 +1,6 @@
-// Adresse du dashboard (servi par le bot sur BD NOVA). Change-la ici si elle bouge.
+// Adresse du dashboard (servi par le bot sur KataBump). Change-la ici si elle bouge.
 window.NOVA = {
-  dashboard: 'http://82.153.202.30:10023',
+  dashboard: 'http://51.75.118.151:20107',
   // Lien d'invitation vers le serveur Discord du bot (change-le ici si besoin)
   support: 'https://discord.gg/69Zmsb3dA7',
 };
