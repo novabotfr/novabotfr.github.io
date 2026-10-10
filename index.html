@@ -3,71 +3,127 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0D0A26">
+<meta name="theme-color" content="#1E1F23">
 <title>Nova — Le bot Discord tout-en-un</title>
-<meta name="description" content="Nova : tickets, sécurité anti-raid et anti-nuke, logs, bienvenue, embeds personnalisés. Configurable depuis un dashboard web.">
+<meta name="description" content="Nova : tickets, sécurité anti-raid et anti-nuke, logs, bienvenue, embeds personnalisés, réseau de bans et templates de serveur. Configurable depuis un dashboard web.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=4">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
-<body>
+<body class="home">
 <header class="nav"><div class="container nav-inner">
-  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="30" height="30"><span>Nova</span></a>
-  <nav class="nav-links"><a href="index.html#features">Fonctionnalités</a><a href="commandes.html">Commandes</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a></nav>
-  <div class="nav-actions"><a class="btn btn-discord" data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener" aria-label="Rejoindre le serveur Discord de Nova"><img src="assets/discord.png" alt="" width="20" height="20"><span>Rejoindre le serveur</span></a><a class="btn btn-ghost" data-dash="/servers" href="#">Dashboard</a><a class="btn" data-dash="/invite" href="#" target="_blank" rel="noopener">Ajouter le bot</a></div>
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>NOVA</span></a>
+  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="avis.html">Avis</a><a href="#faq">FAQ</a></nav>
+  <div class="nav-actions"><a class="btn btn-discord" data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener" aria-label="Rejoindre le serveur Discord de Nova"><img src="assets/discord.png" alt="" width="20" height="20"><span>Support</span></a><a class="btn" data-dash="/servers" href="#">Dashboard</a></div>
 </div></header>
+
 <main>
-<section class="hero"><div class="hero-glow"></div><div class="container hero-inner">
-  <a class="hero-pill" href="#features"><img src="assets/logo.svg" alt="" width="30" height="30"><b>Nova</b><span>· le bot Discord tout-en-un</span></a>
-  <h1>Gère, protège et anime ton serveur Discord avec <span class="grad">Nova</span></h1>
-  <p class="lead">Tickets, sécurité, logs, bienvenue et embeds personnalisés — le tout configurable en quelques clics depuis un dashboard web.</p>
-  <div class="hero-cta"><a class="btn btn-lg" data-dash="/invite" href="#" target="_blank" rel="noopener">Ajouter à Discord</a><a class="btn btn-lg btn-ghost" data-dash="/servers" href="#">Ouvrir le dashboard →</a></div>
-  <div class="stats"><div><strong>6</strong><span>modules</span></div><div><strong>17</strong><span>commandes</span></div><div><strong>100 %</strong><span>gratuit</span></div><div><strong>🇫🇷</strong><span>en français</span></div></div>
+<section class="dhero">
+  <div class="stars" id="stars"></div>
+  <img class="dhero-logo" src="assets/logo.svg" alt="Logo de Nova" width="270" height="270">
+  <h1>Nova, ton bot Discord français tout-en-un</h1>
+  <p class="dhero-for">Un bot pour</p>
+  <span class="rotator" aria-label="Les tickets, la sécurité, les logs, la bienvenue, les embeds, la modération, le réseau de bans, les templates">
+    <span aria-hidden="true">Les Tickets</span><span aria-hidden="true">La Sécurité</span><span aria-hidden="true">Les Logs</span><span aria-hidden="true">La Bienvenue</span><span aria-hidden="true">Les Embeds</span><span aria-hidden="true">La Modération</span><span aria-hidden="true">Le Réseau de bans</span><span aria-hidden="true">Les Templates</span><span aria-hidden="true">Les Tickets</span>
+  </span>
+  <a class="btn btn-lg" data-dash="/invite" href="#" target="_blank" rel="noopener"><img src="assets/discord.png" alt="" width="22" height="22">Ajouter à Discord</a>
+  <p class="dhero-sub">Gratuit • En français • <a data-dash="/servers" href="#">Ouvrir le dashboard →</a></p>
+  <span class="scroll-hint" aria-hidden="true"></span>
+  <svg class="wave wave-top" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#3A5FD0" d="M0,70 C240,10 480,10 720,60 C960,110 1200,110 1440,50 L1440,140 L0,140 Z"/>
+    <path fill="#4F7CFF" d="M0,88 C240,30 480,30 720,78 C960,126 1200,126 1440,68 L1440,140 L0,140 Z"/>
+    <path fill="#2A2C31" d="M0,104 C240,48 480,48 720,94 C960,140 1200,140 1440,84 L1440,140 L0,140 Z"/>
+  </svg>
+</section>
+
+<section class="fsec" id="features"><div class="container">
+  <article class="feat">
+    <div class="feat-art"><div class="orbit"><div class="orbit-core"><span>🎫</span></div><div class="bubble b1">📩</div><div class="bubble b2">📜</div><div class="bubble b3">✋</div></div></div>
+    <div><h2>Tickets</h2>
+      <p>Un panel avec menu ou boutons, des catégories illimitées et un formulaire à remplir avant l'ouverture. Ton staff prend en charge, ajoute des notes et ferme en un clic.</p>
+      <ul><li>Transcripts consultables en ligne</li><li>Lien envoyé en privé à la fermeture</li><li>Rôles staff par catégorie</li></ul></div>
+  </article>
+  <article class="feat rev">
+    <div class="feat-art"><div class="orbit"><div class="orbit-core"><span>🛡️</span></div><div class="bubble b1">🚫</div><div class="bubble b2">✅</div><div class="bubble b3">🤖</div></div></div>
+    <div><h2>Sécurité</h2>
+      <p>Anti-raid, anti-nuke avec liste blanche, blocage des comptes trop récents et anti-bot. Les nouveaux membres passent par une vérification avant d'accéder au serveur.</p>
+      <ul><li>Automod : invitations, spam, mentions, majuscules</li><li>Sanctions automatiques configurables</li><li>Le fondateur n'est jamais sanctionné</li></ul></div>
+  </article>
+  <article class="feat">
+    <div class="feat-art"><div class="orbit"><div class="orbit-core"><span>🌐</span></div><div class="bubble b1">🔨</div><div class="bubble b2">🔗</div><div class="bubble b3">🛑</div></div></div>
+    <div><h2>Réseau de bans</h2>
+      <p>Relie plusieurs serveurs entre eux : une personne bannie avec <b>/gban</b> l'est partout dans le réseau, même si elle revient plus tard.</p>
+      <ul><li>Un code pour inviter un autre serveur</li><li>Liste noire des tickets partagée</li><li>Déban manuel = exception pour ce serveur</li></ul></div>
+  </article>
+  <article class="feat rev">
+    <div class="feat-art"><div class="orbit"><div class="orbit-core"><span>🧩</span></div><div class="bubble b1">#</div><div class="bubble b2">🔊</div><div class="bubble b3">🎭</div></div></div>
+    <div><h2>Templates</h2>
+      <p>Choisis un modèle (Communauté, RolePlay, Gaming, Boutique) et Nova construit tout le serveur : catégories, salons, rôles et permissions.</p>
+      <ul><li>Mode « Ajouter » sans rien supprimer</li><li>Sauvegarde automatique avant remplacement</li><li>Bienvenue, tickets et logs pré-réglés</li></ul></div>
+  </article>
+  <article class="feat">
+    <div class="feat-art"><div class="orbit"><div class="orbit-core"><span>👋</span></div><div class="bubble b1">🎨</div><div class="bubble b2">📜</div><div class="bubble b3">🏷️</div></div></div>
+    <div><h2>Bienvenue & logs</h2>
+      <p>Messages d'arrivée, de départ et en privé avec des embeds personnalisés et des variables. Chaque événement du serveur atterrit dans le bon salon de logs.</p>
+      <ul><li>Éditeur d'embeds avec aperçu en direct</li><li>Rôles automatiques pour membres et bots</li><li>Messages, membres, vocal, sanctions, tickets</li></ul></div>
+  </article>
+</div></section>
+<svg class="wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" style="background:#1E1F23">
+  <path fill="#2A2C31" d="M0,0 L1440,0 L1440,60 C1200,120 960,120 720,72 C480,24 240,24 0,84 Z"/>
+</svg>
+
+<section class="numbers"><div class="container grid-4">
+  <div><strong>9</strong><span>modules</span></div><div><strong>22</strong><span>commandes</span></div><div><strong>100 %</strong><span>gratuit</span></div><div><strong>🇫🇷</strong><span>en français</span></div>
 </div></section>
 
-<section id="features" class="section"><div class="container">
-  <div class="section-head"><span class="kicker">Fonctionnalités</span><h2>Tout ce dont ton serveur a besoin</h2><p class="muted">Remplace une dizaine de bots par un seul, rapide et entièrement en français.</p></div>
-  <div class="grid-3"><article class="card feature"><div class="feature-ico">🎫</div><h3>Tickets nouvelle génération</h3><p class="muted">Panel avec menu ou boutons, catégories illimitées, formulaire de demande, prise en charge, notes staff et transcripts consultables en ligne.</p></article><article class="card feature"><div class="feature-ico">🛡️</div><h3>Sécurité avancée</h3><p class="muted">Anti-raid, anti-nuke avec liste blanche, blocage des comptes trop récents, anti-bot et vérification des nouveaux membres.</p></article><article class="card feature"><div class="feature-ico">📜</div><h3>Logs complets</h3><p class="muted">Messages supprimés ou modifiés, arrivées, départs, rôles, salons, vocal, sanctions et tickets : chaque catégorie dans son salon.</p></article><article class="card feature"><div class="feature-ico">👋</div><h3>Bienvenue & autorole</h3><p class="muted">Messages d'arrivée, de départ et en privé entièrement personnalisables, avec rôles automatiques pour les membres et les bots.</p></article><article class="card feature"><div class="feature-ico">🎨</div><h3>Embeds personnalisés</h3><p class="muted">Un éditeur visuel avec aperçu en direct, champs, images et variables. Envoie-les depuis le dashboard ou avec /embed.</p></article><article class="card feature"><div class="feature-ico">🔨</div><h3>Modération & automod</h3><p class="muted">Ban, kick, timeout, avertissements, clear, filtres anti-invitations, anti-spam, anti-mentions et anti-majuscules.</p></article></div>
-</div></section>
-
-<section class="section alt"><div class="container split">
-  <div><span class="kicker">Dashboard</span><h2>Configure tout sans taper une commande</h2>
-    <p class="muted">Connecte-toi avec Discord, choisis ton serveur et règle chaque module : salons, rôles, messages, sécurité… Les changements sont appliqués instantanément par le bot.</p>
-    <ul class="checks"><li>Aperçu en direct des embeds</li><li>Transcripts de tickets consultables en ligne</li><li>Chaque serveur a sa propre configuration</li></ul>
-    <a class="btn" data-dash="/servers" href="#">Essayer le dashboard</a></div>
-  <div class="mock"><div class="mock-side"><span class="on">Vue d'ensemble</span><span>Bienvenue</span><span>Tickets</span><span>Sécurité</span><span>Logs</span><span>Embeds</span></div>
+<section class="section" id="dashboard"><div class="container split">
+  <div><h2 class="dtitle" style="text-align:left">Un panel complet</h2>
+    <p class="muted" style="font-size:16.5px">Tape <code>/dashboard</code> sur ton serveur, ouvre le lien reçu et règle chaque module : salons, rôles, messages, sécurité… Les changements sont appliqués tout de suite par le bot.</p>
+    <ul class="checks"><li>Aperçu en direct des embeds</li><li>Transcripts de tickets en ligne</li><li>Chaque serveur a sa propre configuration</li></ul>
+    <a class="btn" data-dash="/servers" href="#">Ouvrir le panel</a></div>
+  <div class="mock"><div class="mock-side"><span class="on">Vue d'ensemble</span><span>Bienvenue</span><span>Tickets</span><span>Sécurité</span><span>Logs</span><span>Templates</span></div>
     <div class="mock-main"><div class="mock-embed"><b>🎫 Support</b><p>Choisis une catégorie ci-dessous pour ouvrir un ticket.</p><div class="mock-select">📩 Ouvrir un ticket… ▾</div></div>
     <div class="mock-row"><span class="tog on"></span> Anti-raid <span class="tog on"></span> Anti-nuke <span class="tog"></span> Automod</div></div></div>
 </div></section>
 
-<section class="section"><div class="container">
-  <div class="section-head"><span class="kicker">Pourquoi Nova ?</span><h2>Un seul bot au lieu de dix</h2></div>
-  <div class="grid-3"><div class="card"><h3>⚡ Rapide</h3><p class="muted">Commandes slash, réponses instantanées, aucune configuration compliquée.</p></div>
-  <div class="card"><h3>🔒 Sûr</h3><p class="muted">Le dashboard vérifie tes permissions directement sur Discord avant chaque action.</p></div>
-  <div class="card"><h3>🇫🇷 En français</h3><p class="muted">Messages, dashboard et documentation pensés pour les communautés francophones.</p></div></div>
-</div></section>
-
-<section id="faq" class="section alt"><div class="container narrow">
-  <div class="section-head"><span class="kicker">FAQ</span><h2>Questions fréquentes</h2></div>
+<section id="faq" class="section" style="padding-top:20px"><div class="container narrow">
+  <h2 class="dtitle">Questions fréquentes</h2><p class="dlead">Tout ce qu'il faut savoir pour bien démarrer.</p>
   <details class="faq"><summary>Est-ce gratuit ?</summary><p>Oui, toutes les fonctionnalités sont disponibles gratuitement.</p></details>
-  <details class="faq"><summary>Comment configurer le bot ?</summary><p>Ajoute le bot, ouvre le dashboard, connecte-toi avec Discord puis choisis ton serveur. Tu dois avoir la permission « Gérer le serveur ».</p></details>
-  <details class="faq"><summary>Pourquoi l'anti-nuke ne sanctionne pas quelqu'un ?</summary><p>Le rôle du bot doit être placé au-dessus des rôles des membres à sanctionner. Le propriétaire et la liste blanche ne sont jamais sanctionnés.</p></details>
+  <details class="faq"><summary>Comment configurer le bot ?</summary><p>Ajoute le bot, tape <code>/dashboard</code> sur ton serveur et ouvre le lien reçu. Tu dois avoir la permission « Gérer le serveur ».</p></details>
+  <details class="faq"><summary>Pourquoi le bot ne sanctionne pas quelqu'un ?</summary><p>Le rôle de Nova doit être placé au-dessus des rôles des membres à sanctionner. Le fondateur et la liste blanche ne sont jamais sanctionnés.</p></details>
   <details class="faq"><summary>Où voir les transcripts de tickets ?</summary><p>Dans le dashboard, onglet Transcripts. L'auteur du ticket reçoit aussi un lien en message privé à la fermeture.</p></details>
 </div></section>
 
-<section class="section cta"><div class="container center"><h2>Prêt à passer au niveau supérieur ?</h2><p class="muted">Ajoute Nova en moins de 30 secondes.</p>
-  <a class="btn btn-lg" data-dash="/invite" href="#" target="_blank" rel="noopener">Ajouter à Discord</a></div></section>
+<svg class="wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" style="background:#1E1F23;margin-bottom:-1px">
+  <path fill="#3A5FD0" d="M0,60 C240,0 480,0 720,50 C960,100 1200,100 1440,40 L1440,140 L0,140 Z"/>
+  <path fill="#4F7CFF" d="M0,84 C240,24 480,24 720,74 C960,124 1200,124 1440,64 L1440,140 L0,140 Z"/>
+</svg>
+<section class="dcta"><h2>Prêt à essayer Nova ?</h2><p>Ajoute-le en moins de 30 secondes.</p>
+  <a class="btn btn-lg" data-dash="/invite" href="#" target="_blank" rel="noopener">Ajouter à Discord</a></section>
 </main>
+
 <footer class="footer">
   <div class="container footer-inner">
-    <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="26" height="26"><span>Nova</span></a>
+    <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="30" height="30"><span>NOVA</span></a>
       <p class="muted small">Le bot Discord tout-en-un pour gérer, protéger et animer ton serveur.</p></div>
-    <div class="footer-links"><a href="index.html#features">Fonctionnalités</a><a href="commandes.html">Commandes</a><a href="avis.html">Avis</a><a data-dash="/servers" href="#">Dashboard</a><a data-dash="/invite" href="#" target="_blank" rel="noopener">Inviter</a></div>
+    <div class="footer-links"><a href="commandes.html">Commandes</a><a href="avis.html">Avis</a><a data-dash="/servers" href="#">Dashboard</a><a data-dash="/invite" href="#" target="_blank" rel="noopener">Inviter</a><a data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener">Support</a></div>
   </div>
   <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.</div>
 </footer>
-<script src="assets/config.js?v=3"></script>
+<script src="assets/config.js?v=4"></script>
+<script>
+(() => {
+  const box = document.getElementById('stars'); if (!box) return;
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('i'); const z = Math.random() * 2.4 + 1;
+    s.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 100}%;width:${z}px;height:${z}px;animation-delay:${(Math.random() * 4).toFixed(2)}s`;
+    box.appendChild(s);
+  }
+  const nav = document.querySelector('.nav');
+  addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 80), { passive: true });
+})();
+</script>
 </body>
 </html>
