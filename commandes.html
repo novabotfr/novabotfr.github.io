@@ -27,7 +27,7 @@
 .cmd-meta span { padding: 6px 14px; border-radius: 99px; border: 1px solid var(--line); background: rgba(47,49,55,.6); font-size: 13px; color: var(--muted); }
 .cmd-meta b { color: var(--text); }
 .cat-tabs-wrap { position: sticky; top: 72px; z-index: 40; margin: 26px 0 30px; }
-.cat-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: rgba(42,44,49,.88); backdrop-filter: blur(14px); scrollbar-width: none; }
+.cat-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; overflow: visible; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: rgba(42,44,49,.88); backdrop-filter: blur(14px); scrollbar-width: none; }
 .cat-tabs::-webkit-scrollbar { display: none; }
 .cat-tab { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; border: 1px solid transparent; background: none; color: var(--muted); font: 600 14px Inter, sans-serif; white-space: nowrap; transition: background .15s, color .15s; }
 .cat-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
@@ -163,7 +163,7 @@ function tabs() {
   const all = [{ id: 'all', name: 'Tout', ico: '▦' }, ...CATS];
   t.innerHTML = all.map((c) => {
     const n = c.id === 'all' ? CMDS.length : CMDS.filter((x) => x.c === c.id).length;
-    return `<button class="cat-tab${c.id === cat ? ' active' : ''}" data-c="${c.id}" role="tab"><span>${c.ico}</span>${esc(c.name)} <small>${n}</small></button>`;
+    return `<button class="cat-tab${c.id === cat ? ' active' : ''}" data-c="${c.id}" role="tab">${esc(c.name)} <small>${n}</small></button>`;
   }).join('');
 }
 function render() {
