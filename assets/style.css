@@ -4,9 +4,10 @@
   --radius: 14px; --shadow: 0 10px 40px rgba(0,0,0,.35);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; cursor: url(cursor.svg) 4 3, auto; }
+html { scroll-behavior: smooth; }
+html, body { cursor: url(cursor.png) 4 3, url(cursor.svg) 4 3, auto; }
 /* Curseur Nova */
-a, button, summary, label, select, .btn, [role="button"], .switch, .toggle-row, .inline-check { cursor: url(cursor-pointer.svg) 16 16, pointer !important; }
+a, button, summary, label, select, .btn, [role="button"], .switch, .toggle-row, .inline-check { cursor: url(cursor-pointer.png) 16 16, url(cursor-pointer.svg) 16 16, pointer !important; }
 input:not([type=checkbox]):not([type=color]), textarea { cursor: text; }
 ::selection { background: rgba(79,209,255,.35); color: #fff; }
 body { margin: 0; background-color: var(--bg);
@@ -56,9 +57,11 @@ code { background: var(--card2); padding: 1px 6px; border-radius: 6px; font-size
 .hero { position: relative; overflow: hidden; padding: 110px 0 80px; text-align: center; }
 .hero-glow { position: absolute; inset: -40% -10% auto; height: 700px; background: radial-gradient(closest-side, rgba(88,101,242,.35), transparent 70%), radial-gradient(closest-side at 70% 40%, rgba(79,209,255,.25), transparent 70%); filter: blur(20px); pointer-events: none; }
 .hero-inner { position: relative; }
-.hero-logo { display: block; margin: 0 auto 22px; border-radius: 30px; box-shadow: 0 0 0 1px rgba(79,209,255,.25), 0 18px 60px rgba(88,101,242,.45); animation: nova-float 6s ease-in-out infinite; }
-@keyframes nova-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@media (prefers-reduced-motion: reduce) { .hero-logo { animation: none; } }
+.hero-pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 18px 6px 6px; border-radius: 99px; background: rgba(23,20,61,.75); border: 1px solid var(--line); font-size: 15px; transition: border-color .2s; }
+.hero-pill:hover { border-color: rgba(79,209,255,.5); }
+.hero-pill img { border-radius: 50%; display: block; }
+.hero-pill b { font-weight: 700; }
+.hero-pill span { color: var(--muted); }
 .hero h1 { font-size: clamp(34px, 6vw, 64px); max-width: 900px; margin: 18px auto; }
 .grad { background: linear-gradient(135deg, #F5F3FF, #4FD1FF 55%, #8C96FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { font-size: clamp(16px, 2vw, 19px); color: var(--muted); max-width: 640px; margin: 0 auto 32px; }
