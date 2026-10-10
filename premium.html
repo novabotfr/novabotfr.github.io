@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1E1F23">
+<title>Nova Premium</title>
+<meta name="description" content="Nova Premium : donne à Nova le nom, la photo de profil, la bannière et la description de ton choix sur ton serveur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<style>
+  :root { --gold: #F5C451; --gold-d: #D9A62E; }
+  .pm-hero { position: relative; text-align: center; padding: 80px 16px 40px; overflow: hidden; }
+  .pm-gem { font-size: 76px; display: inline-block; animation: float 5s ease-in-out infinite; filter: drop-shadow(0 10px 30px rgba(245,196,81,.35)); }
+  .pm-hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 800; text-transform: uppercase; margin: 10px 0; }
+  .pm-hero h1 span { color: var(--gold); }
+  .pm-hero p { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 auto; }
+
+  .pm-perk { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 70px); align-items: center; padding: 40px 0 70px; }
+  @media (max-width: 860px) { .pm-perk { grid-template-columns: 1fr; } }
+  .pm-perk h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; text-transform: uppercase; color: var(--accent2); }
+  .pm-perk p { color: #DCDDE1; font-size: 16.5px; line-height: 1.75; }
+  .pm-perk ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
+  .pm-perk li { padding-left: 28px; position: relative; color: var(--muted); }
+  .pm-perk li::before { content: '💎'; position: absolute; left: 0; font-size: 14px; }
+  .pm-demo { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+  .pm-prof { width: 240px; background: #232428; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .pm-prof .bn { height: 80px; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .pm-prof.custom .bn { background: linear-gradient(135deg, #F5C451, #FF7A59); }
+  .pm-prof .av { width: 70px; height: 70px; border-radius: 50%; border: 5px solid #232428; margin: -36px 0 0 12px; background: #1E1F23; display: grid; place-items: center; overflow: hidden; font-size: 34px; }
+  .pm-prof .av img { width: 100%; height: 100%; }
+  .pm-prof .bd { padding: 6px 14px 16px; }
+  .pm-prof b { display: block; font-size: 17px; }
+  .pm-prof small { color: #B5BAC1; }
+  .pm-prof .ab { background: #111214; border-radius: 8px; padding: 9px 10px; margin-top: 10px; font-size: 13px; color: #DBDEE1; }
+  .pm-lbl { display: block; text-align: center; margin-top: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 980px; margin: 0 auto; }
+  @media (max-width: 860px) { .plans { grid-template-columns: 1fr; max-width: 420px; } }
+  .plan { position: relative; background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; }
+  .plan.best { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(245,196,81,.12); }
+  .plan .tag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #1E1F23; font-weight: 800; font-size: 12px; padding: 4px 12px; border-radius: 99px; text-transform: uppercase; white-space: nowrap; }
+  .plan h3 { text-transform: uppercase; font-size: 15px; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
+  .plan .price { font-size: 44px; font-weight: 800; line-height: 1; }
+  .plan .per { color: var(--muted); font-size: 14px; margin: 6px 0 20px; }
+  .plan .btn { justify-content: center; margin-top: auto; }
+  .plan.best .btn { background: var(--gold); border-color: var(--gold); color: #1E1F23; }
+  .plan.best .btn:hover { background: var(--gold-d); border-color: var(--gold-d); }
+
+  .cmp { width: 100%; max-width: 760px; margin: 0 auto; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; }
+  .cmp th, .cmp td { padding: 14px 18px; text-align: center; border-bottom: 1px solid var(--line); }
+  .cmp th:first-child, .cmp td:first-child { text-align: left; }
+  .cmp thead th { background: var(--card2); text-transform: uppercase; font-size: 13px; letter-spacing: .06em; }
+  .cmp thead th:last-child { color: var(--gold); }
+  .cmp tr:last-child td { border-bottom: 0; }
+  .yes { color: var(--ok); font-weight: 800; } .no { color: var(--muted); }
+
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 980px; margin: 0 auto; counter-reset: s; }
+  @media (max-width: 760px) { .how { grid-template-columns: 1fr; } }
+  .how div { background: var(--card); border-radius: 14px; padding: 22px; border-left: 4px solid var(--accent); }
+  .how div::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); font-weight: 800; margin-bottom: 10px; }
+  .how p { margin: 0; color: var(--muted); }
+  .how b { color: var(--text); }
+</style>
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>NOVA</span></a>
+  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="premium.html" style="color:var(--gold)">Premium</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a></nav>
+  <div class="nav-actions"><a class="btn btn-discord" data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener" aria-label="Rejoindre le serveur Discord de Nova"><img src="assets/discord.png" alt="" width="20" height="20"><span>Support</span></a><a class="btn" data-dash="/servers" href="#">Dashboard</a></div>
+</div></header>
+
+<main>
+<section class="pm-hero">
+  <div class="stars" id="stars"></div>
+  <div class="pm-gem">💎</div>
+  <h1>Nova <span>Premium</span></h1>
+  <p>Fais de Nova le bot officiel de ton serveur : ton nom, ta photo de profil, ta bannière et ta description.</p>
+</section>
+
+<section class="container pm-perk">
+  <div>
+    <h2>Ton bot, à ton image</h2>
+    <p>Avec le Premium, le propriétaire du serveur personnalise Nova <b>uniquement sur son serveur</b>. Sur les autres serveurs, Nova garde son profil d'origine.</p>
+    <ul><li>Nom personnalisé</li><li>Photo de profil (GIF accepté)</li><li>Bannière de profil</li><li>Description « À propos de moi »</li><li>Depuis le dashboard ou avec <code>/botprofil</code></li></ul>
+  </div>
+  <div>
+    <div class="pm-demo">
+      <div><div class="pm-prof"><div class="bn"></div><div class="av"><img src="assets/logo.svg" alt=""></div><div class="bd"><b>Nova</b><small>novaBot</small><div class="ab">Le bot Discord tout-en-un.</div></div></div><span class="pm-lbl">Gratuit</span></div>
+      <div><div class="pm-prof custom"><div class="bn"></div><div class="av">🦊</div><div class="bd"><b>Eloria Bot</b><small>novaBot</small><div class="ab">Le bot officiel d'Eloria ✨ Ouvre un ticket dans #support !</div></div></div><span class="pm-lbl" style="color:var(--gold)">💎 Premium</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <h2 class="dtitle">Choisis ta formule</h2><p class="dlead">Le Premium est lié à ton compte Discord et marche sur tous les serveurs dont tu es propriétaire.</p>
+  <div class="container plans" id="plans"></div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <h2 class="dtitle">Comment l'obtenir ?</h2><p class="dlead">Simple et rapide.</p>
+  <div class="container how">
+    <div><p><b>Clique sur « Acheter »</b> et suis les instructions pour payer.</p></div>
+    <div><p><b>Envoie ton pseudo Discord</b> sur le serveur support de Nova (ouvre un ticket).</p></div>
+    <div><p><b>Ton Premium est activé</b> : tu reçois un message privé de Nova et tu peux personnaliser le bot.</p></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="dtitle">Gratuit ou Premium ?</h2><p class="dlead">Toutes les fonctionnalités de Nova restent gratuites.</p>
+  <table class="cmp">
+    <thead><tr><th></th><th>Gratuit</th><th>💎 Premium</th></tr></thead>
+    <tbody>
+      <tr><td>Tickets, sécurité, logs, bienvenue, embeds</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Réseau de bans et templates de serveur</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Nom de Nova personnalisé sur ton serveur</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Photo de profil et bannière personnalisées</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Description « À propos de moi »</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Soutenir le développement de Nova</td><td class="no">—</td><td class="yes">✓</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section id="faq" class="section" style="padding-top:0"><div class="container narrow">
+  <h2 class="dtitle">Questions</h2><p class="dlead"></p>
+  <details class="faq"><summary>Qui peut personnaliser le bot ?</summary><p>Uniquement le propriétaire du serveur, et seulement s'il a le Premium. Les administrateurs ne peuvent pas changer le profil de Nova.</p></details>
+  <details class="faq"><summary>Que se passe-t-il à la fin de mon Premium ?</summary><p>Nova reprend automatiquement son nom, sa photo, sa bannière et sa description d'origine sur tes serveurs. Tout le reste continue de marcher.</p></details>
+  <details class="faq"><summary>Comment vérifier mon Premium ?</summary><p>Tape <code>/premium statut</code> sur n'importe quel serveur où se trouve Nova.</p></details>
+</div></section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="30" height="30"><span>NOVA</span></a>
+      <p class="muted small">Le bot Discord tout-en-un pour gérer, protéger et animer ton serveur.</p></div>
+    <div class="footer-links"><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/servers" href="#">Dashboard</a><a data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener">Support</a></div>
+  </div>
+  <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.</div>
+</footer>
+<script src="assets/config.js?v=5"></script>
+<script>
+(() => {
+  const P = (window.NOVA && window.NOVA.premium) || {};
+  const plans = P.plans || [];
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const buy = P.buyUrl || (window.NOVA && window.NOVA.support) || '#';
+  document.getElementById('plans').innerHTML = plans.map((p) => `<div class="plan ${p.best ? 'best' : ''}">${p.best ? '<span class="tag">Le plus choisi</span>' : ''}
+    <h3>${esc(p.name)}</h3><div class="price">${esc(p.price)}</div><div class="per">${esc(p.per || '')}</div>
+    <a class="btn" href="${esc(p.url || buy)}" target="_blank" rel="noopener">Acheter</a></div>`).join('');
+  const box = document.getElementById('stars');
+  for (let i = 0; i < (innerWidth < 600 ? 30 : 60); i++) {
+    const s = document.createElement('i'); const z = Math.random() * 2.4 + 1; const t = 9 + Math.random() * 14;
+    s.style.cssText = `left:${(Math.random() * 100).toFixed(2)}%;width:${z.toFixed(1)}px;height:${z.toFixed(1)}px;--o:${(0.25 + Math.random() * 0.6).toFixed(2)};--t:${t.toFixed(1)}s;--d:${(-Math.random() * t).toFixed(1)}s;--dx:${(Math.random() * 60 - 30).toFixed(0)}px`;
+    box.appendChild(s);
+  }
+})();
+</script>
+</body>
+</html>
