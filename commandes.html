@@ -89,6 +89,7 @@ mark { background: rgba(79,209,255,.25); color: inherit; border-radius: 3px; pad
 <script>
 const CATS = [
   { id: 'moderation', name: 'Modération', ico: '🛡️', sub: 'Ban, kick, timeout, avertissements…' },
+  { id: 'bannet', name: 'Réseau de bans', ico: '🌐', sub: 'Bannis une fois, banni de tous tes serveurs reliés' },
   { id: 'tickets', name: 'Tickets', ico: '🎫', sub: 'Support par tickets avec transcripts en ligne' },
   { id: 'config', name: 'Configuration', ico: '⚙️', sub: 'Embeds, vérification et accès au dashboard' },
   { id: 'utils', name: 'Utilitaires', ico: '🧰', sub: 'Infos et outils pratiques' },
@@ -104,6 +105,9 @@ const CMDS = [
   { c: 'moderation', n: '/warnings', d: 'Voir les avertissements d\'un membre', u: '/warnings <membre>', p: 'Modérer' },
   { c: 'moderation', n: '/clearwarns', d: 'Effacer tous les avertissements d\'un membre', u: '/clearwarns <membre>', p: 'Modérer' },
   { c: 'moderation', n: '/clear', d: 'Supprimer des messages en masse', u: '/clear <nombre> [membre]', p: 'Gérer les messages', a: '1 à 100' },
+  { c: 'bannet', n: '/gban', d: 'Bannir quelqu\'un de tous les serveurs du réseau (fondateur et admins jamais bannis)', u: '/gban <utilisateur> [raison]', p: 'Bannir' },
+  { c: 'bannet', n: '/gunban', d: 'Lever un ban réseau sur tous les serveurs', u: '/gunban <id>', p: 'Bannir' },
+  { c: 'bannet', n: '/gbans', d: 'Voir le réseau : serveurs reliés et derniers bans', u: '/gbans', p: 'Bannir' },
   { c: 'tickets', n: '/ticket', d: 'Gérer les tickets depuis Discord', s: [
     ['/ticket panel', 'Envoyer ou mettre à jour le panel de tickets'],
     ['/ticket add <membre>', 'Ajouter un membre au ticket'],
