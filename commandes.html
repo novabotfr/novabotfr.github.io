@@ -96,6 +96,7 @@ const CATS = [
   { id: 'avis', name: 'Avis', ico: '⭐', sub: 'Donne ton avis, affiché sur la page Avis du site' },
   { id: 'animation', name: 'Animation', ico: '🎉', sub: 'Niveaux, giveaways, suggestions et anniversaires' },
   { id: 'premium', name: 'Premium', ico: '💎', sub: 'Personnalise le profil de Nova sur ton serveur' },
+  { id: 'auto', name: 'Modules automatiques', ico: '⚙️', sub: 'Aucune commande à taper : tout se règle dans le dashboard' },
 ];
 const CMDS = [
   { c: 'moderation', n: '/ban', d: 'Bannir un membre (même s\'il n\'est plus sur le serveur via /unban ensuite)', u: '/ban <membre> [raison] [supprimer_jours]', p: 'Bannir' },
@@ -136,7 +137,15 @@ const CMDS = [
   { c: 'premium', n: '/botprofil', d: 'Changer le nom, la photo, la bannière et la bio de Nova sur ton serveur', u: '/botprofil [nom] [bio] [avatar] [banniere] [reinitialiser]', p: 'Propriétaire du serveur + Premium' },
   { c: 'animation', n: '/rank', d: 'Voir ton niveau, ton XP et ton rang (ou ceux d\'un membre)', u: '/rank [membre]' },
   { c: 'animation', n: '/classement', d: 'Top 10 des membres les plus actifs du serveur', u: '/classement' },
-  { c: 'animation', n: '/xp', d: 'Modifier l\'XP total d\'un membre', u: '/xp <membre> <xp>', p: 'Gérer le serveur' },
+  { c: 'animation', n: '/xp', d: 'Gérer l\'XP d\'un membre', p: 'Gérer le serveur', s: [
+    ['/xp ajouter <membre> <xp>', 'Ajouter de l\'XP'],
+    ['/xp retirer <membre> <xp>', 'Retirer de l\'XP'],
+    ['/xp definir <membre> <xp>', 'Définir l\'XP total'],
+  ] },
+  { c: 'utils', n: '/stats', d: 'Statistiques d\'activité (messages, vocal, arrivées)', s: [
+    ['/stats membre [membre]', 'Messages, temps en vocal et classement d\'un membre'],
+    ['/stats serveur', 'Activité du serveur sur 7 jours et membres les plus actifs'],
+  ] },
   { c: 'animation', n: '/giveaway', d: 'Lancer et gérer des giveaways', p: 'Gérer le serveur', s: [
     ['/giveaway lancer <lot> <duree> [gagnants] [salon]', 'Lancer un giveaway (durée : 30m, 2h, 3j…)'],
     ['/giveaway terminer <id>', 'Terminer un giveaway maintenant'],
@@ -149,6 +158,12 @@ const CMDS = [
     ['/anniversaire supprimer', 'Supprimer ta date'],
     ['/anniversaire prochains', 'Les prochains anniversaires du serveur'],
   ] },
+  { c: 'auto', n: 'Salon de pseudos', d: 'Le membre envoie son pseudo dans le salon : Nova le renomme sur le serveur, lui donne un rôle et réagit ✅. Un seul message par membre, vérification des pseudos Minecraft en option.', u: 'Dashboard → Messages & rôles → Salon de pseudos' },
+  { c: 'auto', n: 'Message collé', d: 'Un message qui reste toujours en bas d\'un salon : Nova le reposte après chaque nouveau message.', u: 'Dashboard → Messages & rôles → Message collé' },
+  { c: 'auto', n: 'Publication auto', d: 'Les messages des salons d\'annonces sont publiés automatiquement vers les serveurs qui les suivent.', u: 'Dashboard → Messages & rôles → Publication auto' },
+  { c: 'auto', n: 'Notifications streams', d: 'Annonce automatique des lives Twitch et des nouvelles vidéos YouTube de vos créateurs, avec mention @everyone ou d\'un rôle.', u: 'Dashboard → Animation & récompenses → Notifications streams' },
+  { c: 'auto', n: 'Statistiques', d: 'Messages, temps en vocal, arrivées et départs jour par jour, avec graphique et classement des membres les plus actifs.', u: 'Dashboard → Mon serveur → Statistiques' },
+  { c: 'auto', n: 'Multiplicateurs d\'XP', d: 'Les membres qui ont certains rôles gagnent plus d\'XP (ex : boosters ×2). Classement public partageable.', u: 'Dashboard → Niveaux & XP → Multiplicateurs' },
 ];
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const hl = (s, q) => { const e = esc(s); if (!q) return e; const i = e.toLowerCase().indexOf(esc(q).toLowerCase()); return i < 0 ? e : e.slice(0, i) + '<mark>' + e.slice(i, i + esc(q).length) + '</mark>' + e.slice(i + esc(q).length); };
