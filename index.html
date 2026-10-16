@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="stylesheet" href="assets/style.css?v=7">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body class="home">
@@ -22,6 +22,8 @@
 <main>
 <section class="dhero">
   <div class="stars" id="stars"></div>
+  <div class="hero-stats left"><div class="hs-card"><span class="hs-ico">🛡️</span><div><strong data-stat="servers" data-v="5">5</strong><span>serveurs protégés</span></div></div><div class="hs-card"><span class="hs-ico">👥</span><div><strong data-stat="members" data-v="187">187</strong><span>membres protégés</span></div></div></div>
+  <div class="hero-stats right"><div class="hs-card"><span class="hs-ico">💬</span><div><strong data-stat="messages" data-v="98">98</strong><span>messages analysés</span></div></div><div class="hs-card"><span class="hs-ico">⚡</span><div><strong data-stat="commands" data-v="31">31</strong><span>commandes</span></div></div></div>
   <img class="dhero-logo" src="assets/logo.svg" alt="Logo de Nova" width="270" height="270">
   <h1>Nova, ton bot Discord français tout-en-un</h1>
   <p class="dhero-for">Un bot pour</p>
@@ -74,8 +76,15 @@
   <path class="w" style="--ws:18s" fill="#2A2C31" d="M0,0 L0,70 C240,30 480,30 720,70 S1200,110 1440,70 S1920,30 2160,70 S2640,110 2880,70 L2880,0 Z"/>
 </svg>
 
-<section class="numbers"><div class="container grid-4">
-  <div><strong>9</strong><span>modules</span></div><div><strong>22</strong><span>commandes</span></div><div><strong>100 %</strong><span>gratuit</span></div><div><strong>🇫🇷</strong><span>en français</span></div>
+<section class="numbers" id="chiffres"><div class="container">
+  <h2 class="dtitle">Nova en chiffres</h2>
+  <div class="grid-4">
+    <div><strong data-stat="servers" data-v="5">5</strong><span>serveurs protégés</span></div>
+    <div><strong data-stat="members" data-v="187">187</strong><span>membres protégés</span></div>
+    <div><strong data-stat="messages" data-v="98">98</strong><span>messages analysés</span></div>
+    <div><strong data-stat="commands" data-v="31">31</strong><span>commandes</span></div>
+  </div>
+  <p class="num-note">Gratuit • En français • Mis à jour automatiquement</p>
 </div></section>
 
 <section class="section" id="dashboard"><div class="container split">
@@ -122,6 +131,18 @@
     s.style.cssText = `left:${(Math.random() * 100).toFixed(2)}%;width:${z.toFixed(1)}px;height:${z.toFixed(1)}px;--o:${(0.25 + Math.random() * 0.6).toFixed(2)};--t:${t.toFixed(1)}s;--d:${(-Math.random() * t).toFixed(1)}s;--dx:${(Math.random() * 60 - 30).toFixed(0)}px`;
     box.appendChild(s);
   }
+  // Chiffres en direct (assets/stats.json, publié par le bot) avec animation
+  const fmt = (n) => Number(n).toLocaleString('fr-FR');
+  const count = (el, to) => {
+    const t0 = performance.now(); const from = 0;
+    const step = (t) => { const k = Math.min(1, (t - t0) / 1400); el.textContent = fmt(Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  const run = (data, sel = '#chiffres [data-stat]') => document.querySelectorAll(sel).forEach((el) => count(el, Number((data && data[el.dataset.stat]) ?? el.dataset.v) || 0));
+  fetch('assets/stats.json?' + Date.now()).then((r) => (r.ok ? r.json() : null)).catch(() => null).then((d) => run(d, '.hero-stats [data-stat]'));
+  const band = document.getElementById('chiffres');
+  const go = () => fetch('assets/stats.json?' + Date.now()).then((r) => (r.ok ? r.json() : null)).catch(() => null).then(run);
+  if (band && 'IntersectionObserver' in window) { const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { io.disconnect(); go(); } }, { threshold: 0.4 }); io.observe(band); } else go();
   const nav = document.querySelector('.nav');
   addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 80), { passive: true });
 })();
