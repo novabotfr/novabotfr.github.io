@@ -1,7 +1,7 @@
 {
   "servers": 5,
   "members": 187,
-  "messages": 98,
-  "commands": 31,
-  "updatedAt": "2026-10-16T21:36:12.259Z"
+  "modules": 27,
+  "commands": 53,
+  "updatedAt": "2026-10-16T21:46:00.000Z"
 }
