@@ -404,3 +404,26 @@ body.home .nav-inner { height: 96px; transition: height .25s; } body.home .nav.s
 @media (max-width: 1100px) { .hero-stats { display: none; } }
 @media (prefers-reduced-motion: reduce) { .hs-card { animation: none; } }
 .hs-card { text-align: left; }
+
+/* Pages légales */
+.footer-legal { display: inline-flex; flex-wrap: wrap; gap: 6px 16px; margin-left: 18px; }
+.footer-legal a:hover { color: var(--text); }
+.legal { padding: 120px 0 70px; }
+.legal h1 { font-size: clamp(28px, 4vw, 40px); margin: 22px 0 4px; line-height: 1.2; }
+.legal h2 { font-size: 20px; margin: 34px 0 10px; padding-top: 6px; scroll-margin-top: 90px; }
+.legal p, .legal li { color: #D8D5F5; }
+.legal ul { padding-left: 20px; }
+.legal li { margin: 6px 0; }
+.legal a:not(.btn) { color: var(--accent2); }
+.legal code { background: var(--card2); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 13px; }
+.legal-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.legal-tabs a { padding: 7px 14px; border-radius: 99px; background: var(--card); border: 1px solid var(--line); color: var(--muted) !important; font-size: 14px; font-weight: 600; }
+.legal-tabs a.on, .legal-tabs a:hover { background: rgba(88,101,242,.18); border-color: var(--accent); color: var(--text) !important; }
+.legal-toc { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px 16px 40px; margin: 22px 0 6px; columns: 2; column-gap: 32px; }
+.legal-toc li { margin: 3px 0; break-inside: avoid; }
+.legal-table { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); margin: 12px 0; }
+.legal-table table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.legal-table th, .legal-table td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.legal-table th { background: var(--card2); color: var(--text); }
+.legal-table tr:last-child td { border-bottom: 0; }
+@media (max-width: 640px) { .legal { padding-top: 100px; } .legal-toc { columns: 1; } .footer-legal { margin: 8px 0 0; display: flex; } }

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=8">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body class="home">
@@ -119,7 +119,7 @@
       <p class="muted small">Le bot Discord tout-en-un pour gérer, protéger et animer ton serveur.</p></div>
     <div class="footer-links"><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/servers" href="#">Dashboard</a><a data-dash="/invite" href="#" target="_blank" rel="noopener">Inviter</a><a data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener">Support</a></div>
   </div>
-  <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.</div>
+  <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.<span class="footer-legal"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a><a href="cgv.html">CGV</a></span></div>
 </footer>
 <script src="assets/config.js?v=5"></script>
 <script>
@@ -134,7 +134,8 @@
   // Chiffres en direct (assets/stats.json, publié par le bot) avec animation
   const fmt = (n) => Number(n).toLocaleString('fr-FR');
   const count = (el, to) => {
-    const t0 = performance.now(); const from = 0;
+    const t0 = performance.now(); const from = el.dataset.now ? Number(el.dataset.now) : 0; el.dataset.now = to;
+    if (from === to && el.dataset.done) return; el.dataset.done = 1;
     const step = (t) => { const k = Math.min(1, (t - t0) / 1400); el.textContent = fmt(Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   };
@@ -143,6 +144,9 @@
   const band = document.getElementById('chiffres');
   const go = () => fetch('assets/stats.json?' + Date.now()).then((r) => (r.ok ? r.json() : null)).catch(() => null).then(run);
   if (band && 'IntersectionObserver' in window) { const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { io.disconnect(); go(); } }, { threshold: 0.4 }); io.observe(band); } else go();
+  // Mise à jour automatique : on relit les chiffres toutes les minutes, seuls ceux qui ont changé bougent
+  setInterval(() => { if (document.hidden) return; fetch('assets/stats.json?' + Date.now()).then((r) => (r.ok ? r.json() : null)).catch(() => null).then((d) => { if (!d) return;
+    document.querySelectorAll('[data-stat]').forEach((el) => { const v = Number(d[el.dataset.stat]); if (el.dataset.done && Number.isFinite(v) && v !== Number(el.dataset.now)) count(el, v); }); }); }, 60000);
   const nav = document.querySelector('.nav');
   addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 80), { passive: true });
 })();
