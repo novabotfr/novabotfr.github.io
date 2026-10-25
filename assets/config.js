@@ -2,7 +2,7 @@
 window.NOVA = {
   dashboard: 'http://51.75.118.151:20107',
   // Lien d'invitation vers le serveur Discord du bot (change-le ici si besoin)
-  support: 'https://discord.gg/69Zmsb3dA7',
+  support: 'https://discord.gg/zj9Qa7ptby',
   // Nova Premium : change les prix et le lien de paiement ici.
   // buyUrl : ton lien de paiement (PayPal, Ko-fi, Tipeee, Stripe…). Par défaut : le serveur support.
   // Tu peux aussi mettre un lien différent par formule avec  url: '...'
