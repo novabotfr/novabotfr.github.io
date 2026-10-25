@@ -8,26 +8,26 @@
 <meta name="description" content="Toutes les commandes du bot Discord Nova.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=9">
 <style>
 /* ===== Page commandes (style Nexora) ===== */
 .cmd-hero { position: relative; text-align: center; padding: 84px 0 28px; overflow: hidden; }
 .cmd-hero .hero-glow { height: 520px; }
 .cmd-hero h1 { font-size: clamp(32px, 5.4vw, 60px); margin: 18px auto 14px; max-width: 900px; position: relative; }
 .cmd-hero .lead { margin-bottom: 26px; position: relative; }
-.ref-pill { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; background: rgba(47,49,55,.8); border: 1px solid var(--line); font-size: 13px; font-weight: 600; color: #DCD8FF; }
+.ref-pill { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; background: rgba(23,20,61,.8); border: 1px solid var(--line); font-size: 13px; font-weight: 600; color: #DCD8FF; }
 .ref-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 10px var(--accent2); }
 .cmd-search { position: relative; max-width: 620px; margin: 0 auto; }
-.cmd-search input { width: 100%; padding: 16px 52px 16px 48px; border-radius: 14px; border: 1px solid var(--line); background: rgba(47,49,55,.75); color: var(--text); font: 15px Inter, sans-serif; outline: none; transition: border-color .2s, box-shadow .2s; }
+.cmd-search input { width: 100%; padding: 16px 52px 16px 48px; border-radius: 14px; border: 1px solid var(--line); background: rgba(23,20,61,.75); color: var(--text); font: 15px Inter, sans-serif; outline: none; transition: border-color .2s, box-shadow .2s; }
 .cmd-search input:focus { border-color: rgba(79,209,255,.6); box-shadow: 0 0 0 4px rgba(79,209,255,.12); }
 .cmd-search svg { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: var(--muted); }
 .cmd-search kbd { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); padding: 2px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--card2); color: var(--muted); font: 12px ui-monospace, monospace; }
 .cmd-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; position: relative; }
-.cmd-meta span { padding: 6px 14px; border-radius: 99px; border: 1px solid var(--line); background: rgba(47,49,55,.6); font-size: 13px; color: var(--muted); }
+.cmd-meta span { padding: 6px 14px; border-radius: 99px; border: 1px solid var(--line); background: rgba(23,20,61,.6); font-size: 13px; color: var(--muted); }
 .cmd-meta b { color: var(--text); }
 .cat-tabs-wrap { position: sticky; top: 72px; z-index: 40; margin: 26px 0 30px; }
-.cat-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; overflow: visible; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: rgba(42,44,49,.88); backdrop-filter: blur(14px); scrollbar-width: none; }
+.cat-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; overflow: visible; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: rgba(23,20,61,.88); backdrop-filter: blur(14px); scrollbar-width: none; }
 .cat-tabs::-webkit-scrollbar { display: none; }
 .cat-tab { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; border: 1px solid transparent; background: none; color: var(--muted); font: 600 14px Inter, sans-serif; white-space: nowrap; transition: background .15s, color .15s; }
 .cat-tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
@@ -42,21 +42,21 @@
 .cmd-cat-head .count { margin-left: auto; padding: 3px 10px; border-radius: 99px; border: 1px solid var(--line); font: 12px ui-monospace, monospace; color: var(--muted); }
 .cmd-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 @media (max-width: 820px) { .cmd-grid { grid-template-columns: 1fr; } }
-.cmd-card { border: 1px solid var(--line); border-radius: 16px; background: rgba(47,49,55,.55); padding: 18px 20px; transition: border-color .2s, transform .2s, background .2s; }
-.cmd-card:hover { border-color: rgba(79,209,255,.45); background: rgba(47,49,55,.8); transform: translateY(-2px); }
+.cmd-card { border: 1px solid var(--line); border-radius: 16px; background: rgba(23,20,61,.55); padding: 18px 20px; transition: border-color .2s, transform .2s, background .2s; }
+.cmd-card:hover { border-color: rgba(79,209,255,.45); background: rgba(23,20,61,.8); transform: translateY(-2px); }
 .cmd-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .cmd-name { font: 700 16px ui-monospace, 'SFMono-Regular', Menlo, monospace; color: var(--text); }
 .cmd-alias { padding: 1px 8px; border-radius: 6px; border: 1px dashed var(--line); font: 12px ui-monospace, monospace; color: var(--muted); }
 .cmd-perm { margin-left: auto; padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #F7D88A; background: rgba(245,196,81,.1); border: 1px solid rgba(245,196,81,.35); }
 .cmd-desc { margin: 8px 0 12px; color: #D5D2F2; font-size: 14.5px; }
-.cmd-usage { display: inline-block; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: rgba(30,31,35,.6); font: 12.5px ui-monospace, monospace; color: #C9C5EE; }
+.cmd-usage { display: inline-block; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: rgba(13,10,38,.6); font: 12.5px ui-monospace, monospace; color: #C9C5EE; }
 .cmd-subs { margin-top: 12px; }
 .cmd-subs summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; color: #9FB4FF; font-size: 14px; font-weight: 600; }
 .cmd-subs summary::-webkit-details-marker { display: none; }
 .cmd-subs summary::before { content: '›'; display: inline-block; transition: transform .2s; font-size: 16px; }
 .cmd-subs[open] summary::before { transform: rotate(90deg); }
 .cmd-subs ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
-.cmd-subs li { display: grid; gap: 4px; padding: 10px 12px; border-radius: 10px; background: rgba(30,31,35,.55); border: 1px solid rgba(46,42,99,.7); }
+.cmd-subs li { display: grid; gap: 4px; padding: 10px 12px; border-radius: 10px; background: rgba(13,10,38,.55); border: 1px solid rgba(46,42,99,.7); }
 .cmd-subs li span { color: var(--muted); font-size: 13.5px; }
 .cmd-empty { text-align: center; color: var(--muted); padding: 40px 0 80px; }
 mark { background: rgba(79,209,255,.25); color: inherit; border-radius: 3px; padding: 0 1px; }
@@ -66,7 +66,7 @@ mark { background: rgba(79,209,255,.25); color: inherit; border-radius: 3px; pad
 <body>
 <header class="nav"><div class="container nav-inner">
   <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>NOVA</span></a>
-  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a></nav>
+  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a><a data-dash="/support" href="#">Ticket</a></nav>
   <div class="nav-actions"><a class="btn btn-discord" data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener" aria-label="Rejoindre le serveur Discord de Nova"><img src="assets/discord.png" alt="" width="20" height="20"><span>Support</span></a><a class="btn" data-dash="/login" href="#">Dashboard</a></div>
 </div></header>
 <main>
@@ -216,7 +216,7 @@ tabs(); render();
   <div class="container footer-inner">
     <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>NOVA</span></a>
       <p class="muted small">Le bot Discord tout-en-un pour gérer, protéger et animer ton serveur.</p></div>
-    <div class="footer-links"><a href="index.html#features">Fonctionnalités</a><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/login" href="#">Dashboard</a><a data-dash="/invite" href="#" target="_blank" rel="noopener">Inviter</a></div>
+    <div class="footer-links"><a data-dash="/support" href="#">Ouvrir un ticket</a><a href="index.html#features">Fonctionnalités</a><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/login" href="#">Dashboard</a><a data-dash="/invite" href="#" target="_blank" rel="noopener">Inviter</a></div>
   </div>
   <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.<span class="footer-legal"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a><a href="cgv.html">CGV</a></span></div>
 </footer>

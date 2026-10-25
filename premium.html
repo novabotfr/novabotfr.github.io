@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1E1F23">
+<meta name="theme-color" content="#0D0A26">
 <title>Nova Premium</title>
 <meta name="description" content="Nova Premium : donne à Nova le nom, la photo de profil, la bannière et la description de ton choix sur ton serveur.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=9">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <style>
   :root { --gold: #F5C451; --gold-d: #D9A62E; }
@@ -21,21 +21,21 @@
 
   .pm-perk { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 70px); align-items: center; padding: 40px 0 70px; }
   @media (max-width: 860px) { .pm-perk { grid-template-columns: 1fr; } }
-  .pm-perk h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; text-transform: uppercase; color: var(--accent2); }
+  .pm-perk h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 700; color: var(--accent2); }
   .pm-perk p { color: #DCDDE1; font-size: 16.5px; line-height: 1.75; }
   .pm-perk ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
   .pm-perk li { padding-left: 28px; position: relative; color: var(--muted); }
   .pm-perk li::before { content: '💎'; position: absolute; left: 0; font-size: 14px; }
   .pm-demo { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
-  .pm-prof { width: 240px; background: #232428; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .pm-prof { width: 240px; background: #17143D; border: 1px solid #2B2760; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
   .pm-prof .bn { height: 80px; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
   .pm-prof.custom .bn { background: linear-gradient(135deg, #F5C451, #FF7A59); }
-  .pm-prof .av { width: 70px; height: 70px; border-radius: 50%; border: 5px solid #232428; margin: -36px 0 0 12px; background: #1E1F23; display: grid; place-items: center; overflow: hidden; font-size: 34px; }
+  .pm-prof .av { width: 70px; height: 70px; border-radius: 50%; border: 5px solid #17143D; margin: -36px 0 0 12px; background: #0D0A26; display: grid; place-items: center; overflow: hidden; font-size: 34px; }
   .pm-prof .av img { width: 100%; height: 100%; }
   .pm-prof .bd { padding: 6px 14px 16px; }
   .pm-prof b { display: block; font-size: 17px; }
   .pm-prof small { color: #B5BAC1; }
-  .pm-prof .ab { background: #111214; border-radius: 8px; padding: 9px 10px; margin-top: 10px; font-size: 13px; color: #DBDEE1; }
+  .pm-prof .ab { background: #0D0A26; border-radius: 8px; padding: 9px 10px; margin-top: 10px; font-size: 13px; color: #DBDEE1; }
   .pm-lbl { display: block; text-align: center; margin-top: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 
   .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 980px; margin: 0 auto; }
@@ -69,7 +69,7 @@
 <body>
 <header class="nav"><div class="container nav-inner">
   <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>NOVA</span></a>
-  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="premium.html" style="color:var(--gold)">Premium</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a></nav>
+  <nav class="nav-links"><a href="commandes.html">Commandes</a><a href="premium.html" style="color:var(--gold)">Premium</a><a href="avis.html">Avis</a><a href="index.html#faq">FAQ</a><a data-dash="/support" href="#">Ticket</a></nav>
   <div class="nav-actions"><a class="btn btn-discord" data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener" aria-label="Rejoindre le serveur Discord de Nova"><img src="assets/discord.png" alt="" width="20" height="20"><span>Support</span></a><a class="btn" data-dash="/login" href="#">Dashboard</a></div>
 </div></header>
 
@@ -159,7 +159,7 @@
   <div class="container footer-inner">
     <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="30" height="30"><span>NOVA</span></a>
       <p class="muted small">Le bot Discord tout-en-un pour gérer, protéger et animer ton serveur.</p></div>
-    <div class="footer-links"><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/login" href="#">Dashboard</a><a data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener">Support</a></div>
+    <div class="footer-links"><a data-dash="/support" href="#">Ouvrir un ticket</a><a href="commandes.html">Commandes</a><a href="premium.html">Premium</a><a href="avis.html">Avis</a><a data-dash="/login" href="#">Dashboard</a><a data-support href="https://discord.gg/69Zmsb3dA7" target="_blank" rel="noopener">Support</a></div>
   </div>
   <div class="container small muted footer-bottom">© 2026 Nova. Non affilié à Discord.<span class="footer-legal"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a><a href="cgv.html">CGV</a></span></div>
 </footer>
